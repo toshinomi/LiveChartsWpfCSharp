@@ -64,19 +64,20 @@ namespace LiveChartsWpfCSharp
             {
                 m_nHistgram[nIdx] = 0;
                 chartValue.Add(m_nHistgram[nIdx]);
-
-                var seriesCollection = new SeriesCollection();
-
-                var lineSeriesChart = new LineSeries()
-                {
-                    Values = chartValue,
-                    Title = "Histgram"
-                };
-                seriesCollection.Add(lineSeriesChart);
-
-                graphData.seriesCollection = seriesCollection;
-                this.DataContext = graphData;
             }
+
+            var seriesCollection = new SeriesCollection();
+
+            var lineSeriesChart = new LineSeries()
+            {
+                Values = chartValue,
+                Title = "Histgram"
+            };
+            seriesCollection.Add(lineSeriesChart);
+
+            graphData.seriesCollection = seriesCollection;
+            this.DataContext = graphData;
+
             return;
         }
 
