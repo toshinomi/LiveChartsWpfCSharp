@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:LiveChartsWpfCSharp"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="500" Width="1000"
+        ResizeMode="NoResize">
     <Grid Background="LightSteelBlue">
         <Border BorderBrush="White" BorderThickness="2" Canvas.Left="20" Canvas.Top="39" CornerRadius="10" Margin="20,70,570,30">
             <Image x:Name="image" Margin="10"/>
