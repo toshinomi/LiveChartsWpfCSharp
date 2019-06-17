@@ -84,6 +84,8 @@ namespace LiveChartsWpfCSharp
         {
             GraphData graphData = new GraphData();
 
+            InitHistgram();
+
             CalHistgram(_bitmap);
 
             var chartValue = new ChartValues<int>();
@@ -127,6 +129,14 @@ namespace LiveChartsWpfCSharp
                         m_nHistgram[nGrayScale] += 1;
                     }
                 }
+            }
+        }
+
+        public void InitHistgram()
+        {
+            for (int nIdx = 0; nIdx < 256; nIdx++)
+            {
+                m_nHistgram[nIdx] = 0;
             }
         }
     }
