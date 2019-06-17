@@ -27,6 +27,10 @@ namespace LiveChartsWpfCSharp
         public MainWindow()
         {
             InitializeComponent();
+
+            m_nHistgram = new int[256];
+
+            InitGraph();
         }
 
         private void OnClickBtnFileSelect(object sender, RoutedEventArgs e)
@@ -47,6 +51,31 @@ namespace LiveChartsWpfCSharp
                 image.Source = bitmap;
 
                 DrawHistgram(bitmap);
+            }
+            return;
+        }
+
+        public void InitGraph()
+        {
+            GraphData graphData = new GraphData();
+
+            var chartValue = new ChartValues<int>();
+            for (int nIdx = 0; nIdx < 256; nIdx++)
+            {
+                m_nHistgram[nIdx] = 0;
+                chartValue.Add(m_nHistgram[nIdx]);
+
+                var seriesCollection = new SeriesCollection();
+
+                var lineSeriesChart = new LineSeries()
+                {
+                    Values = chartValue,
+                    Title = "Histgram"
+                };
+                seriesCollection.Add(lineSeriesChart);
+
+                graphData.seriesCollection = seriesCollection;
+                this.DataContext = graphData;
             }
             return;
         }
@@ -85,8 +114,6 @@ namespace LiveChartsWpfCSharp
 
             int nIdxWidth;
             int nIdxHeight;
-
-            m_nHistgram = new int[256];
 
             unsafe
             {
