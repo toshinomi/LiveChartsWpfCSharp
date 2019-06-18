@@ -22,13 +22,11 @@ namespace LiveChartsWpfCSharp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int[] m_nHistgram;
+        private int[] m_nHistgram = new int[256];
 
         public MainWindow()
         {
             InitializeComponent();
-
-            m_nHistgram = new int[256];
 
             InitGraph();
         }
