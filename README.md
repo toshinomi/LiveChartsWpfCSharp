@@ -1,3 +1,5 @@
+# LiveChartsWpfCSharp
+
 # 概要
 LiveChartsグラフライブラリを使用したC# WPFのサンプルプログラムです。  
 画像ファイルを読み込み、RGBのヒストグラムを表示しています。
