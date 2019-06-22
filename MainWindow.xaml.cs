@@ -58,7 +58,7 @@ namespace LiveChartsWpfCSharp
             GraphData graphData = new GraphData();
 
             var chartValue = new ChartValues<int>();
-            for (int nIdx = 0; nIdx < 256; nIdx++)
+            for (int nIdx = 0; nIdx < m_nHistgram.Length; nIdx++)
             {
                 m_nHistgram[nIdx] = 0;
                 chartValue.Add(m_nHistgram[nIdx]);
@@ -88,7 +88,7 @@ namespace LiveChartsWpfCSharp
             CalHistgram(_bitmap);
 
             var chartValue = new ChartValues<int>();
-            for (int nIdx = 0; nIdx < 256; nIdx++)
+            for (int nIdx = 0; nIdx < m_nHistgram.Length; nIdx++)
             {
                 chartValue.Add(m_nHistgram[nIdx]);
             }
@@ -133,7 +133,7 @@ namespace LiveChartsWpfCSharp
 
         public void InitHistgram()
         {
-            for (int nIdx = 0; nIdx < 256; nIdx++)
+            for (int nIdx = 0; nIdx < m_nHistgram.Length; nIdx++)
             {
                 m_nHistgram[nIdx] = 0;
             }
